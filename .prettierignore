@@ -1,0 +1,8 @@
+node_modules/
+**/dist/
+**/coverage/
+**/.vitest/
+**/.env
+**/.env.*
+**/*.pdf
+package-lock.json

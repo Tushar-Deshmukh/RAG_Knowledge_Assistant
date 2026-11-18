@@ -4,6 +4,10 @@ Last updated: 2026-11-17. Distinguish the approved target from implementation de
 
 ## Approved direction
 
+### Phase 2 closure and local-only references
+
+On 2026-11-18 the learner completed the final understanding review and explicitly approved Phase 2 closure and publication to `origin/main`. The master prompt and roadmap PDF were confirmed present on that remote branch. At the user's request, remove them from current tracking, retain local copies, and ignore their root paths. Earlier commits remain unchanged; this does not purge history. Do not re-add these references. Fresh clones rely on the tracked project docs for scope and continuity; the local reference files are optional additional context there. Subsequent commits/pushes still require authorization.
+
 ### Scope and learning workflow
 
 Use Phase 2 of the available `MERN_to_AI_Roadmap.pdf` as the primary project scope and `MASTER_PROMPT.md` as the project's additional requirements and teaching instructions. Multiple-document support is included by the master prompt even though it is a PDF stretch goal. Do not expand into agent frameworks or later roadmap phases.
@@ -14,7 +18,7 @@ Default to Guided Implementation Mode. The learner writes application code unles
 
 The user approved the preservation-first strategy and frontend/backend architecture, then explicitly requested a complete scratch repository on 2026-11-17. A fresh external backup was verified before moving `server/` and `.gitignore` out of the working tree into a separate external archive. Git history, the PDF, the master prompt, and the documentation are preserved. See `DEVELOPMENT_PLAN.md` for backup and archive details.
 
-Build every application component from scratch without reusing or consulting the previous implementation as reference. Backups are recovery artifacts only. The working tree contains `docs/`, `MERN_to_AI_Roadmap.pdf`, `README.md`, and `MASTER_PROMPT.md`, plus the hidden `.git/` directory. Reintroduce application directories and tooling progressively through guided tasks.
+Build every application component from scratch without reusing or consulting the previous implementation as reference. Backups are recovery artifacts only. Immediately after cleanup, the working tree contained `docs/`, `MERN_to_AI_Roadmap.pdf`, `README.md`, and `MASTER_PROMPT.md`, plus the hidden `.git/` directory. New application directories and tooling have since been introduced through guided tasks.
 
 ### One repository, separate client and server
 
@@ -47,6 +51,8 @@ Assign source labels server-side and resolve returned labels against the actual 
 Top-k results do not guarantee supporting evidence. Return an explicit insufficient-evidence response when justified by the evidence. Provider/database failures or invalid generated references are operational errors, not proof that a PDF lacks the answer.
 
 ## Open proposals and choices
+
+Foundation choices now implemented: npm workspaces; TypeScript 6.0.3 in the 6.0 patch line to satisfy typescript-eslint support; separate backend build/test-check configurations; separate browser and Node-side client typechecking; Vite build gated by TypeScript checks; Tailwind CSS v4 through its Vite plugin; root Prettier and scoped ESLint rules. React 19/Vite 8 form the minimal frontend. Client/backend HTTP integration remains for a later feature; there is no frontend secret configuration.
 
 - Request-time ingestion was proposed for an initial implementation but has not been finalized; assess timeout implications versus background processing.
 - Decide MongoDB driver versus Mongoose, identifier types, maintained PDF and multipart libraries, upload storage/retention, and HTTP client as relevant.

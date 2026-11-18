@@ -65,10 +65,10 @@ The answer service coordinates the pipeline; retrieval owns query embedding and 
 
 These fields were discussed and reviewed as a learning model; they are not implemented schemas. String identifiers were used in the exercise. Concrete MongoDB identifier types remain open.
 
-| Collection | Fields | Meaning |
-| --- | --- | --- |
-| documents | `_id`, `originalFilename`, `status`, optional `pageCount`, `createdAt` | Uploaded PDF and processing lifecycle |
-| chunks | `_id`, `documentId`, `chunkIndex`, `text`, `pageStart`, `pageEnd`, `embedding` | Searchable passage and its evidence location |
+| Collection | Fields                                                                         | Meaning                                      |
+| ---------- | ------------------------------------------------------------------------------ | -------------------------------------------- |
+| documents  | `_id`, `originalFilename`, `status`, optional `pageCount`, `createdAt`         | Uploaded PDF and processing lifecycle        |
+| chunks     | `_id`, `documentId`, `chunkIndex`, `text`, `pageStart`, `pageEnd`, `embedding` | Searchable passage and its evidence location |
 
 - `status`: `processing`, `ready`, or `failed`.
 - `createdAt`: a date. `pageCount` may be unknown before extraction finishes.
